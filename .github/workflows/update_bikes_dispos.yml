@@ -1,0 +1,29 @@
+name: Render Disponibilités vélos dans Montpellier
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # Toutes les 15 minutes
+
+jobs:
+  render-dispo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Specific File
+        run: quarto render dispo.qmd
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dispo.html  # Mettre le fichier de sortie ici
+          git commit -m "Update dispo.qmd render"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
