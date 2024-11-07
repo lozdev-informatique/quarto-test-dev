@@ -1,0 +1,12 @@
+{
+  "hash": "96724917573ed187f53360d67931598d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Prédiction\"\nformat: html\nexecute:\n  echo: false\njupyter: python3\n---\n\n\n\n\n\n\n\nPrédiction du traffic pour la journée de demain\n\n# Select a Date\n\n<!-- HTML Date Picker and Button -->\n<input type=\"date\" id=\"datePicker\" />\n<button onclick=\"sendDateToPython()\">Submit Date</button>\n\n<script>\n// JavaScript function to capture the selected date and send it to Python via Quarto Observable\nfunction sendDateToPython() {\n    const selectedDate = document.getElementById(\"datePicker\").value;\n    \n    if (selectedDate) {\n        // Use Quarto's Observable binding to set the value of selected_date\n        window.quarto.set(\"selected_date\", selectedDate);\n    } else {\n        alert(\"Please select a date.\");\n    }\n}\n</script>\n\n\n\n::: {#a1487e21 .cell bind='selected_date' execution_count=2}\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n'No date selected.'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "prediction_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

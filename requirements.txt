@@ -1,0 +1,8 @@
+jupyter
+matplotlib
+pandas
+osmnx
+plotly
+panel
+scikit-learn
+folium

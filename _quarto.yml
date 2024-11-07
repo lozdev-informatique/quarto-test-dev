@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Bikes and bike-sharing in Montpellier"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - traffic.qmd
+      - prediction.qmd
+      - dispo.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

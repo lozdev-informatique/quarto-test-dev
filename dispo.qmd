@@ -1,0 +1,85 @@
+---
+title: "Disponibilité en temps réel"
+format: html
+execute:
+  echo: false
+jupyter: python3
+---
+
+Disponibilité des vélos dans Montpellier
+
+```{python}
+import requests
+import folium
+from IPython.display import HTML
+
+url = 'https://portail-api-data.montpellier3m.fr/bikestation?limit=1000'
+response = requests.get(url)
+if response.status_code == 200:
+    stations_data = response.json() 
+
+    # Create a map centered around Montpellier
+    map_center = [43.6119, 3.8772]
+    map_obj = folium.Map(location=map_center, zoom_start=13)
+
+    # Add all stations with informations
+    for station in stations_data:
+        name = station['id'].split(':')[-1]  # Code de la station (001)
+        lon = station['location']['value']['coordinates'][0]
+        lat = station['location']['value']['coordinates'][1]
+        location = (lat, lon)
+        time = station['availableBikeNumber']['metadata']['timestamp']['value']
+        streetAddress = station['address']['value']['streetAddress']
+        availableBikeNumber = station['availableBikeNumber']['value']
+        freeSlotNumber = station['freeSlotNumber']['value']
+
+        bike_color = 'black' if availableBikeNumber == 0 else 'red' if availableBikeNumber < 3 else 'orange' if availableBikeNumber < 5 else 'green'
+
+        parking_color = 'black' if freeSlotNumber == 0 else 'red' if freeSlotNumber < 3 else 'orange' if freeSlotNumber < 5 else 'green'
+
+        html_tooltip = f'''
+            <h3>Station {name}</h3>
+            <h4>{streetAddress}</h4>
+            {time}
+            <div style="font-size: 12px;">
+                <i class="fa fa-bicycle" style="color: {bike_color};"></i> 
+                <b>Vélos disponibles:</b> {availableBikeNumber}
+            </div>
+            <div style="font-size: 12px;">
+                <i class="fa fa-square-parking" style="color: {parking_color};"></i> 
+                <b>Places libres:</b> {freeSlotNumber}
+            </div>
+        '''
+
+        div_icon_html = f"""
+            <div style="
+                display: flex; 
+                width: 40px; 
+                height: 20px; 
+                border: 1px solid black; 
+                border-radius: 5px; 
+                overflow: hidden;
+            ">
+                <div style="flex: 1; background-color: {bike_color}; display: flex; align-items: center; justify-content: center;">
+                    <i class="fa fa-bicycle" style="color: white;"></i>
+                </div>
+                <div style="flex: 1; background-color: {parking_color}; display: flex; align-items: center; justify-content: center;">
+                    <i class="fa fa-square-parking" style="color: white;"></i>
+                </div>
+            </div>
+        """
+
+        folium.Marker(
+            location=location,
+            tooltip=html_tooltip,
+            # icon=folium.Icon(color=bike_color,icon='bicycle', prefix='fa'),
+            icon=folium.DivIcon(html=div_icon_html)
+        ).add_to(map_obj)
+
+else:
+    print(f"Erreur lors de la récupération des données : {response.status_code}")
+
+# Display the map
+HTML(map_obj._repr_html_()) 
+
+```
