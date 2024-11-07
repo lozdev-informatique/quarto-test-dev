@@ -1,1 +1,0 @@
-Sitemap: https://gj-lozdev.github.io/quarto-test-dev/sitemap.xml
