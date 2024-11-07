@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "traffic.html",
-    "href": "traffic.html",
-    "title": "Traffic simulation",
-    "section": "",
-    "text": "Simulation du traffic de vélo dans Montpellier sur la journée du 30/09/2024.\n\n\n\n  \n  Your browser does not support the video tag."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Bikes and bike-sharing in Montpellier",
@@ -14,11 +7,11 @@
     "text": "Description de la page d’accueil"
   },
   {
-    "objectID": "dispo.html",
-    "href": "dispo.html",
-    "title": "Disponibilité des vélos",
+    "objectID": "traffic.html",
+    "href": "traffic.html",
+    "title": "Traffic simulation",
     "section": "",
-    "text": "Disponibilité des vélos dans Montpellier\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "text": "Simulation du traffic de vélo dans Montpellier sur la journée du 30/09/2024.\n\n\n\n  \n  Your browser does not support the video tag."
   },
   {
     "objectID": "prediction.html",
@@ -26,5 +19,12 @@
     "title": "Prédiction",
     "section": "",
     "text": "Prédiction du traffic pour la journée de demain"
+  },
+  {
+    "objectID": "dispo.html",
+    "href": "dispo.html",
+    "title": "Disponibilité des vélos",
+    "section": "",
+    "text": "Disponibilité des vélos dans Montpellier\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   }
 ]
