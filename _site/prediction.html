@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bikes and bike-sharing in Montpellier</title>
+<title>Prédiction – Bikes and bike-sharing in Montpellier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -97,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Traffic simulation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./prediction.html"> 
+    <a class="nav-link active" href="./prediction.html" aria-current="page"> 
 <span class="menu-text">Prédiction</span></a>
   </li>  
   <li class="nav-item">
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bikes and bike-sharing in Montpellier</h1>
+<h1 class="title">Prédiction</h1>
 </div>
 
 
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Description de la page d’accueil</p>
+<p>Prédiction du traffic pour la journée de demain</p>
 
 
 
@@ -237,7 +237,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/gj-lozdev\.github\.io\/quarto-test-dev\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
