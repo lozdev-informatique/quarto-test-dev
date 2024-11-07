@@ -25,13 +25,13 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Render Specific File
-        run: quarto render dispo.qmd
+        run: quarto render dispo.qmd  --output-dir docs/
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add dispo.html  # Mettre le fichier de sortie ici
+          git add docs/dispo.html  # Mettre le fichier de sortie ici
           git commit -m "Update dispo.qmd render"
           git push
         env:
