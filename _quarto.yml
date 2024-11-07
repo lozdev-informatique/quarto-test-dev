@@ -1,6 +1,8 @@
 project:
   type: website
-  output-dir: docs
+
+publish:
+  method: gh-pages
 
 website:
   title: "Bikes and bike-sharing in Montpellier"
