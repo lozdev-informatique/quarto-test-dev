@@ -1,6 +1,0 @@
----
-title: "Prédiction"
-format: html
----
-
-Prédiction du traffic pour la journée de demain

@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 publish:
   method: gh-pages
@@ -11,7 +12,7 @@ website:
       - href: index.qmd
         text: Accueil
       - traffic.qmd
-      - prediction.qmd
+      - previsions.qmd
       - dispo.qmd
 
 format:
