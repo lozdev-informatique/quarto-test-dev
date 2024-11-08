@@ -14,11 +14,11 @@
     "text": "Simulation du traffic de vélo dans Montpellier sur la journée du 30/09/2024.\n\n\n\n  \n  Your browser does not support the video tag."
   },
   {
-    "objectID": "prediction.html",
-    "href": "prediction.html",
-    "title": "Prédiction",
+    "objectID": "previsions.html",
+    "href": "previsions.html",
+    "title": "Prévisions",
     "section": "",
-    "text": "Prédiction du traffic pour la journée de demain"
+    "text": "Densité du traffic sur la journée du 30/09/2024\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   },
   {
     "objectID": "dispo.html",
